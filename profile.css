@@ -665,7 +665,7 @@ a:hover {
 @media (max-width: 391px) {
   .text {
     font-size: 20px;
-    top: 52%;
+    top: 55%;
     left: 50%;
   }
   .card2-container {
@@ -692,7 +692,7 @@ a:hover {
   .card5-container {
     width: 80%;
     height: 50%;
-    top: 333%;
+    top: 330%;
     left: 50%;
   }
 

@@ -619,3 +619,19 @@ transform: rotateY(0deg);
     background-size: cover;
   }
 }
+
+@media only screen and (max-width: 414px) {
+  .card2-container {
+    width: 70%;
+    height: 70%;
+    top: 105%;
+    left: 50%;
+  }
+
+  .card3-container {
+    width: 70%;
+    height: 70%;
+    top: 170%;
+    left: 50%;
+  }
+}
