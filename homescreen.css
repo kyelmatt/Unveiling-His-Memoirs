@@ -179,7 +179,7 @@ section {
   top: 55%;
   left: 18%;
   transform: translate(-50%, -50%);
-  background: url(resources/flipB.svg);
+  background-color: #f5f5fa;
   background-size: cover;
   background-position: 50%;
   border: 2px solid #132e35;
