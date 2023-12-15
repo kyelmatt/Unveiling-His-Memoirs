@@ -1,0 +1,325 @@
+:root {
+  --blue: #12d2db;
+  --white: #f5f5fa;
+  --mainColor: #132e35;
+  --mainColor1: #2d4a53;
+  --mainColor2: #69818d;
+  --mainColor3: #afb3b7;
+  --mainColor4: #5a636a;
+  --mainColor-blc: #0d1f23;
+  --shadow: 0 5px 20px 5px rgba(105, 129, 141, 0.5);
+  --navColor: rgba(13, 31, 35, 0.9);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background: #132e35;
+  --color: rgba(114, 114, 114, 0.3);
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 55px 55px;
+}
+
+.nav-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  background: #132e35;
+  position: fixed;
+  width: 100%;
+  margin-top: 40px;
+}
+
+nav {
+  position: absolute;
+  background: var(--navColor);
+  box-shadow: var(--shadow);
+  height: 80px;
+  width: 100%;
+}
+
+label.logo {
+  max-width: 200px;
+  position: absolute;
+  top: 12%;
+  left: 2%;
+}
+
+label.logo img {
+  width: 30%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+nav ul {
+  float: right;
+  margin-right: 80px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+}
+
+nav ul li a {
+  color: var(--white);
+  font-size: 20px;
+  padding: 7px 13px;
+  border-radius: 13px;
+  text-transform: lowercase;
+}
+
+ul a.active,
+ul a:hover {
+  background: var(--mainColor2);
+  transition: 0.5s;
+}
+
+.checkbtn {
+  line-height: 80px;
+  font-size: 30px;
+  float: right;
+  cursor: pointer;
+  margin-right: 40px;
+  display: none;
+}
+
+.checkbtn i {
+  color: var(--white);
+  padding: 5px;
+  border-radius: 10px;
+  transition: 0.5s ease;
+}
+
+.checkbtn i:hover {
+  background: var(--mainColor2);
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 952px) {
+  label.logo {
+    max-width: 250px;
+    top: 11%;
+    left: 2%;
+  }
+
+  label.logo img {
+    width: 25%;
+    max-width: 100%;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+  nav ul {
+    opacity: 0.95;
+  }
+}
+
+@media (max-width: 858px) {
+  label.logo {
+    max-width: 250px;
+    top: 11%;
+    left: 2%;
+  }
+
+  label.logo img {
+    width: 25%;
+    max-width: 100%;
+  }
+
+  .checkbtn {
+    display: block;
+  }
+
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--mainColor-blc);
+    top: 80px;
+    left: -100%;
+    padding-top: 80px;
+    text-align: center;
+    transition: 0.5s ease;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 30px 0;
+    line-height: 30px;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  a.active,
+  a:hover {
+    background: none;
+    color: var(--blue);
+    text-shadow: 0 10px 15px var(--blue);
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+
+p {
+  text-align: justify;
+  color: #f5f5fa;
+  margin: 30px;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+.card {
+  width: 25em;
+  height: 35.5em;
+  background: #afb3b7;
+  transition: 1s ease-in-out;
+  clip-path: polygon(
+    30px 0%,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0% 30px
+  );
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.card .info {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: 0.72em;
+  margin: 1em;
+}
+
+.card h2 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: #f5f5fa;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.card .share {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+img.contact-image {
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 254px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px #888888;
+  border: 2px solid #888888;
+  margin-top: 10px;
+  background: #f5f5fa;
+}
+
+.card a {
+  color: #f5f5fa;
+  transition: 0.4s ease-in-out;
+  text-decoration: none;
+}
+
+.card a:hover {
+  color: #69818d;
+}
+
+.card .share svg {
+  width: 1em;
+  height: 1em;
+}
+
+.button {
+  padding: 0.8em 3.7em;
+  display: block;
+  margin: auto;
+  margin-top: -20px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  border: 2px solid #888888;
+  font-weight: bold;
+  background: #f5f5fa;
+  color: #171717;
+  transition: 0.4s ease-in-out;
+}
+
+.button:hover {
+  background: #69818d;
+  color: #f5f5fa;
+  cursor: pointer;
+}
+
+.text {
+  color: #f5f5fa;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 7px;
+  margin-top: 5px;
+}
+
+.number {
+  color: #f5f5fa;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}

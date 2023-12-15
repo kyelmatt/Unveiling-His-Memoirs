@@ -1,0 +1,688 @@
+:root {
+  --blue: #12d2db;
+  --white: #f5f5fa;
+  --mainColor: #132e35;
+  --mainColor1: #2d4a53;
+  --mainColor2: #69818d;
+  --mainColor3: #afb3b7;
+  --mainColor4: #5a636a;
+  --mainColor-blc: #0d1f23;
+  --shadow: 0 5px 20px 5px rgba(105, 129, 141, 0.5);
+  --navColor: rgba(13, 31, 35, 0.9);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #132e35;
+  overflow: auto;
+  --color: rgba(114, 114, 114, 0.3);
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 55px 55px;
+}
+
+.nav-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  background: #132e35;
+  position: fixed;
+  width: 100%;
+  margin-top: 40px;
+}
+
+nav {
+  position: absolute;
+  background: var(--navColor);
+  box-shadow: var(--shadow);
+  height: 80px;
+  width: 100%;
+}
+
+label.logo {
+  max-width: 200px;
+  position: absolute;
+  top: 12%;
+  left: 2%;
+}
+
+label.logo img {
+  width: 30%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+nav ul {
+  float: right;
+  margin-right: 80px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+}
+
+nav ul li a {
+  color: var(--white);
+  font-size: 20px;
+  padding: 7px 13px;
+  border-radius: 13px;
+  text-transform: lowercase;
+}
+
+a.active,
+a:hover {
+  background: var(--mainColor2);
+  transition: 0.5s;
+}
+
+.checkbtn {
+  line-height: 80px;
+  font-size: 30px;
+  float: right;
+  cursor: pointer;
+  margin-right: 40px;
+  display: none;
+}
+
+.checkbtn i {
+  color: var(--white);
+  padding: 5px;
+  border-radius: 10px;
+  transition: 0.5s ease;
+}
+
+.checkbtn i:hover {
+  background: var(--mainColor2);
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 952px) {
+  label.logo {
+    max-width: 250px;
+    top: 11%;
+    left: 2%;
+  }
+
+  label.logo img {
+    width: 25%;
+    max-width: 100%;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+  nav ul {
+    opacity: 0.95;
+  }
+}
+
+@media (max-width: 858px) {
+  label.logo {
+    max-width: 250px;
+    top: 11%;
+    left: 2%;
+  }
+
+  label.logo img {
+    width: 25%;
+    max-width: 100%;
+  }
+
+  .checkbtn {
+    display: block;
+  }
+
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--mainColor-blc);
+    top: 80px;
+    left: -100%;
+    padding-top: 80px;
+    text-align: center;
+    transition: 0.5s ease;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 30px 0;
+    line-height: 30px;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  a.active,
+  a:hover {
+    background: none;
+    color: var(--blue);
+    text-shadow: 0 10px 15px var(--blue);
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+
+.card-container {
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  width: 100%;
+  height: 200px;
+  max-width: 800px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-image: url("resources/nicknamefront.svg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #69818d;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-image: url("resources/nicknameback.svg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #69818d;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+
+.card2-container {
+  width: 20%;
+  height: 70%;
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 117%;
+  left: 12%;
+  transform: translate(-50%, -50%);
+}
+
+.card3-container {
+  width: 20%;
+  height: 70%;
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 117%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+}
+
+.card4-container {
+  width: 20%;
+  height: 70%;
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 117%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+}
+
+.card5-container {
+  width: 20%;
+  height: 70%;
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 117%;
+  left: 87%;
+  transform: translate(-50%, -50%);
+}
+
+.card2 {
+  width: 100%;
+  height: 235px;
+  max-width: 800px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card3 {
+  width: 100%;
+  height: 235px;
+  max-width: 800px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card4 {
+  width: 100%;
+  height: 235px;
+  max-width: 800px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card5 {
+  width: 100%;
+  height: 235px;
+  max-width: 800px;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-inner2,
+.card-inner3,
+.card-inner4,
+.card-inner5 {
+  width: 100%;
+  height: 200%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card2:hover .card-inner2,
+.card3:hover .card-inner3,
+.card4:hover .card-inner4,
+.card5:hover .card-inner5 {
+  transform: rotateY(180deg);
+}
+
+.card-front2,
+.card-back2,
+.card-front3,
+.card-back3,
+.card-front4,
+.card-back4,
+.card-front5,
+.card-back5 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front2 {
+  background-image: url("resources/c1.svg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 1px 12px rgba(105, 129, 141, 1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-front3 {
+  background-image: url("resources/c2.svg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 1px 12px rgba(245, 245, 250, 1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-front4 {
+  background-image: url("resources/c3.svg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 1px 12px rgba(245, 245, 250, 1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-front5 {
+  background-image: url("resources/c4.svg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 1px 12px rgba(245, 245, 250, 1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back2,
+.card-back3,
+.card-back4,
+.card-back5 {
+  background-color: #f5f5fa;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  border: 10px solid #69818d;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+
+.rotate-text p {
+  transform: scaleX(1) !important;
+  font-family: "Times New Roman" !important;
+  color: #0d1f23;
+  font-size: 20px;
+  padding: 25px;
+  text-align: justify;
+}
+
+.text {
+  text-align: center;
+  font-size: 30px;
+  font-style: italic;
+  margin-top: 20px;
+  color: #f5f5fa;
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1280px) {
+  .rotate-text p {
+    font-size: 18px;
+    padding: 15px;
+  }
+  .card-front2,
+  .card-front3,
+  .card-front4,
+  .card-front5 {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 952px) {
+  .text {
+    font-size: 23px;
+  }
+  .rotate-text p {
+    font-size: 20px;
+    padding: 35px;
+  }
+  .card2-container {
+    width: 40%;
+    height: 70%;
+    top: 117%;
+    left: 25%;
+  }
+
+  .card3-container {
+    width: 40%;
+    height: 70%;
+    top: 117%;
+    left: 75%;
+  }
+
+  .card4-container {
+    width: 40%;
+    height: 70%;
+    top: 195%;
+    left: 25%;
+  }
+
+  .card5-container {
+    width: 40%;
+    height: 70%;
+    top: 195%;
+    left: 75%;
+  }
+  .card-front2,
+  .card-front3,
+  .card-front4,
+  .card-front5 {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 858px) {
+  .text {
+    font-size: 21.5px;
+  }
+  .rotate-text p {
+    font-size: 20px;
+    padding: 35px;
+  }
+  .card2-container {
+    width: 50%;
+    height: 70%;
+    top: 117%;
+    left: 50%;
+  }
+
+  .card3-container {
+    width: 50%;
+    height: 70%;
+    top: 195%;
+    left: 50%;
+  }
+
+  .card4-container {
+    width: 50%;
+    height: 70%;
+    top: 275%;
+    left: 50%;
+  }
+
+  .card5-container {
+    width: 50%;
+    height: 70%;
+    top: 355%;
+    left: 50%;
+  }
+
+  .card-front2,
+  .card-front3,
+  .card-front4,
+  .card-front5 {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 450px) {
+  .text {
+    font-size: 21.5px;
+    top: 45%;
+    left: 50%;
+  }
+  .card2-container {
+    width: 70%;
+    height: 70%;
+    top: 105%;
+    left: 50%;
+  }
+
+  .card3-container {
+    width: 70%;
+    height: 70%;
+    top: 165%;
+    left: 50%;
+  }
+
+  .card4-container {
+    width: 70%;
+    height: 70%;
+    top: 225%;
+    left: 50%;
+  }
+
+  .card5-container {
+    width: 70%;
+    height: 50%;
+    top: 275%;
+    left: 50%;
+  }
+
+  .card-front2,
+  .card-front3,
+  .card-front4,
+  .card-front5 {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 391px) {
+  .text {
+    font-size: 20px;
+    top: 52%;
+    left: 50%;
+  }
+  .card2-container {
+    width: 80%;
+    height: 70%;
+    top: 115%;
+    left: 50%;
+  }
+
+  .card3-container {
+    width: 80%;
+    height: 70%;
+    top: 191%;
+    left: 50%;
+  }
+
+  .card4-container {
+    width: 80%;
+    height: 70%;
+    top: 267%;
+    left: 50%;
+  }
+
+  .card5-container {
+    width: 80%;
+    height: 50%;
+    top: 333%;
+    left: 50%;
+  }
+
+  .card-front2,
+  .card-front3,
+  .card-front4,
+  .card-front5 {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 350px) {
+  .rotate-text p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 540px) {
+  .rotate-text p {
+    font-size: 18px;
+  }
+  .card-front2,
+  .card-front3,
+  .card-front4,
+  .card-front5 {
+    background-size: cover;
+  }
+}

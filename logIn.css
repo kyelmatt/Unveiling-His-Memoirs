@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI';
+    background-image: url('resources/loadingpic.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.wallpaper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('resources/loadingpic.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px) brightness(70%);
+
+}
+
+.login-container {
+    position: absolute;
+    top: 100;
+    left: 0;
+    bottom: 10%;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.login-screen {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f2f2f8;
+    font-family: 'Anurati';
+}
+
+button {
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 0;
+    background-color: #f2f2f8;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: all .5s ease;
+   }
+   
+   button:hover {
+    letter-spacing: 3px;
+    font-weight: bold;
+    background-color: #81a9b3;
+    color: hsl(0, 0%, 100%);
+    box-shadow: #81a9b3 0px 7px 29px 0px;
+   }
+   
+   button:active {
+    letter-spacing: 3px;
+    background-color: #355A68;
+    color: hsl(0, 0%, 100%);
+    box-shadow: #355A68 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+   }

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unveiling His Memoirs</title>
+    <link rel="icon" href="resources/logos/logo tab.png" type="image/x-icon" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="feedback.css" />
+  </head>
+  <body>
+    <div class="nav-container">
+      <nav>
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="bx bx-menu"></i>
+        </label>
+        <label class="logo"><img src="resources/logos/logo site.svg" /></label>
+        <ul>
+          <li><a href="./cot.html">Chronicles of Triumph</a></li>
+          <li><a href="./homescreen.html">Home</a></li>
+          <li><a href="./profile.html">Profile</a></li>
+          <li><a href="./contactme.html">Contact</a></li>
+          <li><a href="./feedback.html" class="active">Feedback</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container">
+    <h3>Feedbacks</h3>
+    <br>
+
+    <div class="testimonial">
+        <img src="resources/francine.jpg" alt="Testimonial Photo">
+        <div class="testimonial-content">
+            <p><strong>Francine Galleno</strong></p>
+            <p><em>Bachelor in Advertising and Public Relations, PUP Sta. Mesa</em></p>
+            <p>The editor complied with all of my demands and instructions; he provide excellent customer service and also offer comments to help you improve your idea. I am extremely satisfied with the changes he made and would absolutely contact him again if I ever need to edit again. All in all, everything is worth it.
+</p>
+        </div>
+    </div>
+    <p class="underline-text">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>
+    
+    Your voice matters—make a difference with your feedback!
+
+    <form action="" class="form">
+        <p><input required="" type="text" name="name" id="name" placeholder="Your Name"></p>
+        <p><textarea id="userFeedback" name="userFeedback" rows="4" placeholder="Feedback" required></textarea></p>
+        <button type="button" onclick="sendFeedback()">Send Feedback</button>
+    </form>
+</div>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    emailjs.init("989xCh1i2zHPzSJlY");
+
+    function sendFeedback() {
+        const userName = document.getElementById("name").value;
+        const userFeedback = document.getElementById("userFeedback").value;
+
+        if (userName.trim() === "" || userFeedback.trim() === "") {
+            alert("Please enter both your name and feedback.");
+            return;
+        }
+
+        emailjs.send("service_website", "template_website", {
+            from_name: userName,
+            message: userFeedback,
+        })
+        .then(function(response) {
+            console.log("Email sent successfully:", response);
+            alert("Feedback sent successfully!");
+        }, function(error) {
+            console.error("Error sending email:", error);
+            alert("Error sending feedback. Please try again later.");
+        });
+    }
+</script>
+  </body>
+</html>
