@@ -686,3 +686,38 @@ a:hover {
     background-size: cover;
   }
 }
+
+@media only screen and (max-width: 414px) {
+  text {
+    font-size: 20px;
+    top: 54%;
+    left: 50%;
+  }
+  .card2-container {
+    width: 80%;
+    height: 70%;
+    top: 117%;
+    left: 50%;
+  }
+
+  .card3-container {
+    width: 80%;
+    height: 70%;
+    top: 198%;
+    left: 50%;
+  }
+
+  .card4-container {
+    width: 80%;
+    height: 70%;
+    top: 275%;
+    left: 50%;
+  }
+
+  .card5-container {
+    width: 80%;
+    height: 50%;
+    top: 350%;
+    left: 50%;
+  }
+}
