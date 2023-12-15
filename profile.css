@@ -627,6 +627,41 @@ a:hover {
   }
 }
 
+@media only screen and (max-width: 414px) {
+  text {
+    font-size: 20px;
+    top: 57%;
+    left: 50%;
+  }
+  .card2-container {
+    width: 80%;
+    height: 70%;
+    top: 116%;
+    left: 50%;
+  }
+
+  .card3-container {
+    width: 80%;
+    height: 70%;
+    top: 195%;
+    left: 50%;
+  }
+
+  .card4-container {
+    width: 80%;
+    height: 70%;
+    top: 273%;
+    left: 50%;
+  }
+
+  .card5-container {
+    width: 80%;
+    height: 50%;
+    top: 345%;
+    left: 50%;
+  }
+}
+
 @media (max-width: 391px) {
   .text {
     font-size: 20px;
@@ -684,40 +719,5 @@ a:hover {
   .card-front4,
   .card-front5 {
     background-size: cover;
-  }
-}
-
-@media only screen and (max-width: 414px) {
-  text {
-    font-size: 20px;
-    top: 57%;
-    left: 50%;
-  }
-  .card2-container {
-    width: 80%;
-    height: 70%;
-    top: 116%;
-    left: 50%;
-  }
-
-  .card3-container {
-    width: 80%;
-    height: 70%;
-    top: 195%;
-    left: 50%;
-  }
-
-  .card4-container {
-    width: 80%;
-    height: 70%;
-    top: 273%;
-    left: 50%;
-  }
-
-  .card5-container {
-    width: 80%;
-    height: 50%;
-    top: 345%;
-    left: 50%;
   }
 }
