@@ -297,3 +297,12 @@ section {
     margin-top: 25px;
   }
 }
+
+@media only screen 
+  and (max-device-width: 380px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .book {
+      top: 60%
+    }
+  }
