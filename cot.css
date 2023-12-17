@@ -655,7 +655,6 @@ transform: rotateY(0deg);
     }
 
     .rotate-text p span{
-      padding: 17px;
-      text-align: justify;
+      padding: 15px;
     }
   }
