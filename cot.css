@@ -635,3 +635,22 @@ transform: rotateY(0deg);
     left: 50%;
   }
 }
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) {
+    .card2-container {
+      width: 70%;
+      height: 70%;
+      top: 110%;
+      left: 50%;
+    }
+  
+    .card3-container {
+      width: 70%;
+      height: 70%;
+      top: 185%;
+      left: 50%;
+    }
+  }
